@@ -1415,6 +1415,40 @@ function toast(msg){
   clearTimeout(tid);
   tid=setTimeout(()=>el.classList.remove('show'),2400);
 }
+
+/* Mobile scale-to-fit */
+function scaleDevice(){
+  const device=document.querySelector('.device');
+  const prog=document.querySelector('.prog');
+  const vw=window.innerWidth;
+  const vh=window.innerHeight;
+  if(vw<=430){
+    const scale=Math.min(vw/390, vh/844);
+    device.style.zoom=scale;
+    device.style.borderRadius='0';
+    if(prog) prog.style.display='none';
+    document.body.style.justifyContent='flex-start';
+    document.body.style.alignItems='center';
+    document.body.style.padding='0';
+    document.body.style.margin='0';
+    document.body.style.overflow='hidden';
+    document.body.style.height='100dvh';
+    document.body.style.minHeight='unset';
+  } else {
+    device.style.zoom='';
+    device.style.borderRadius='';
+    if(prog) prog.style.display='';
+    document.body.style.justifyContent='';
+    document.body.style.alignItems='';
+    document.body.style.padding='';
+    document.body.style.margin='';
+    document.body.style.overflow='';
+    document.body.style.height='';
+    document.body.style.minHeight='';
+  }
+}
+scaleDevice();
+window.addEventListener('resize',scaleDevice);
 </script>
 </body>
 </html>
