@@ -562,14 +562,6 @@ body{
      S1 — 홈
 ════════════════════════════════════════ -->
 <div class="scr active white-surface" id="s1">
-  <div class="sb"><span class="t">9:41</span><span class="i">●●● LTE</span></div>
-  <div class="home-hero">
-    <div class="home-logo">다방</div>
-    <div class="search-input" onclick="go(2)">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      어떤 방을 찾으세요?
-    </div>
-  </div>
   <!-- Category row -->
   <div style="background:var(--bg-card);border-bottom:1px solid var(--line)">
     <div class="cat-scroll">
@@ -580,8 +572,10 @@ body{
       <div class="cat-item" onclick="go(2)"><div class="cat-ico">🏗</div><div class="cat-lbl">분양</div></div>
     </div>
   </div>
+  <!-- Map placeholder -->
+  <div style="width:100%;height:268px;background:#f0f2f7"></div>
   <!-- Trust banner -->
-  <div class="trust-banner" onclick="go(2)" style="margin-top:16px">
+  <div class="trust-banner" onclick="go(2)" style="margin-top:0">
     <div class="tb-ico">🛡️</div>
     <div class="tb-text">
       <div class="tb-title">안심 인증 매물만 보기</div>
@@ -678,16 +672,16 @@ body{
       <div class="lst-body">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
           <span class="lst-price">월세 300/50</span>
-          <span class="badge orange" style="padding:4px 6px;font-size:11px">-8%</span>
+          <span class="badge orange" style="padding:4px 6px;font-size:11px">시세 -8% ↓</span>
         </div>
         <div class="lst-desc">깔끔한 정투룸</div>
-        <div class="info-row" style="margin-bottom:8px"><span>투룸</span><div class="dot"></div><span>39.66㎡</span><div class="dot"></div><span>고층</span><div class="dot"></div><span>관리비 8만</span></div>
+        <div class="info-row" style="margin-bottom:8px"><span>투룸</span><div class="dot"></div><span>39.66㎡</span><div class="dot"></div><span>고층</span></div>
         <div class="lst-trust-row">
           <div class="trust-metric hi">🛡 87점</div>
           <div class="trust-metric"><div class="dot"></div></div>
           <div class="trust-metric hi">응답 95%</div>
           <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric">7분 이내</div>
+          <div class="trust-metric">7분</div>
         </div>
       </div>
     </div>
@@ -697,16 +691,16 @@ body{
       <div class="lst-body">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
           <span class="lst-price">월세 280/45</span>
-          <span class="badge green" style="padding:4px 6px;font-size:11px">-12%</span>
+          <span class="badge green" style="padding:4px 6px;font-size:11px">시세 -12% ↓</span>
         </div>
         <div class="lst-desc">채광 좋은 신축 원룸</div>
-        <div class="info-row" style="margin-bottom:8px"><span>원룸</span><div class="dot"></div><span>24.8㎡</span><div class="dot"></div><span>2층</span><div class="dot"></div><span>관리비 5만</span></div>
+        <div class="info-row" style="margin-bottom:8px"><span>원룸</span><div class="dot"></div><span>24.8㎡</span><div class="dot"></div><span>2층</span></div>
         <div class="lst-trust-row">
           <div class="trust-metric hi">🛡 92점</div>
           <div class="trust-metric"><div class="dot"></div></div>
           <div class="trust-metric hi">응답 88%</div>
           <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric">12분 이내</div>
+          <div class="trust-metric">12분</div>
         </div>
       </div>
     </div>
@@ -716,16 +710,16 @@ body{
       <div class="lst-body">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
           <span class="lst-price">월세 320/55</span>
-          <span class="badge orange" style="padding:4px 6px;font-size:11px">-5%</span>
+          <span class="badge orange" style="padding:4px 6px;font-size:11px">시세 -5% ↓</span>
         </div>
         <div class="lst-desc">조용한 주택가 투룸</div>
-        <div class="info-row" style="margin-bottom:8px"><span>투룸</span><div class="dot"></div><span>42.0㎡</span><div class="dot"></div><span>1층</span><div class="dot"></div><span>관리비 6만</span></div>
+        <div class="info-row" style="margin-bottom:8px"><span>투룸</span><div class="dot"></div><span>42.0㎡</span><div class="dot"></div><span>1층</span></div>
         <div class="lst-trust-row">
           <div class="trust-metric hi">🛡 79점</div>
           <div class="trust-metric"><div class="dot"></div></div>
           <div class="trust-metric hi">응답 72%</div>
           <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric">23분 이내</div>
+          <div class="trust-metric">23분</div>
         </div>
       </div>
     </div>
@@ -735,16 +729,16 @@ body{
       <div class="lst-body">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
           <span class="lst-price">월세 260/40</span>
-          <span class="badge green" style="padding:4px 6px;font-size:11px">-15%</span>
+          <span class="badge green" style="padding:4px 6px;font-size:11px">시세 -15% ↓</span>
         </div>
         <div class="lst-desc">역 도보 5분 전세보증보험 가능</div>
-        <div class="info-row" style="margin-bottom:8px"><span>원룸</span><div class="dot"></div><span>20.4㎡</span><div class="dot"></div><span>3층</span><div class="dot"></div><span>관리비 3만</span></div>
+        <div class="info-row" style="margin-bottom:8px"><span>원룸</span><div class="dot"></div><span>20.4㎡</span><div class="dot"></div><span>3층</span></div>
         <div class="lst-trust-row">
           <div class="trust-metric hi">🛡 95점</div>
           <div class="trust-metric"><div class="dot"></div></div>
           <div class="trust-metric hi">응답 99%</div>
           <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric">3분 이내</div>
+          <div class="trust-metric">3분</div>
         </div>
       </div>
     </div>
@@ -882,7 +876,7 @@ body{
   </div>
   <div class="p-analysis">
     <div class="pa-label">📊 시세 대비 가격 분석</div>
-    <div class="pa-main">성건동 전원세 중간값 대비 <span style="color:var(--green-dark)">8% 저렴</span></div>
+    <div class="pa-main">성건동 전월세 대비 <span style="color:var(--green-dark)">8% 저렴</span></div>
     <div class="pa-sub">→ 이 매물은 적정가 이하</div>
   </div>
   <div class="naver-banner" onclick="openSheet()">
