@@ -198,13 +198,69 @@ body{
 .info-row .dot{width:3px;height:3px;border-radius:50%;background:var(--ink-ph)}
 
 /* ── ───────────────────────────────────────────── */
-/*   SCREEN 1: 홈                                   */
+/*   SCREEN 1: 홈 (163:6 병합)                      */
 /* ────────────────────────────────────────────── */
-.home-hero{
-  padding:16px 16px 12px;
-  background:var(--bg-card);
-  border-bottom:1px solid var(--line);
+.home-hdr{display:flex;align-items:center;gap:12px;padding:10px 16px 12px;background:#fff}
+.home-logo2{font-size:26px;font-weight:900;color:#1c63f2;letter-spacing:-.5px;flex-shrink:0}
+.home-search2{
+  flex:1;height:44px;background:#f5f5f7;border-radius:18px;
+  display:flex;align-items:center;gap:8px;padding:0 14px;
+  color:#a6a6a6;font-size:13px;cursor:pointer;
 }
+.cat-grid-big{display:flex;gap:8px;padding:10px 16px 6px}
+.cat-big-card{
+  flex:1;background:#fff;border-radius:12px;padding:14px;
+  cursor:pointer;position:relative;min-height:90px;
+  -webkit-tap-highlight-color:transparent;
+}
+.cat-big-card .cbc-title{font-size:16px;font-weight:700;color:var(--ink-hi);margin-bottom:6px}
+.cat-big-card .cbc-desc{font-size:10px;color:#666;line-height:1.6}
+.cat-big-badge{
+  position:absolute;top:10px;right:10px;
+  background:#fa4040;color:#fff;
+  font-size:10px;font-weight:700;padding:3px 8px;border-radius:11px;
+}
+.cat-grid-sm{display:flex;gap:8px;padding:0 16px 10px}
+.cat-sm-card{
+  flex:1;background:#fff;border-radius:12px;padding:14px;
+  cursor:pointer;min-height:80px;-webkit-tap-highlight-color:transparent;
+}
+.cat-sm-card .cbc-title{font-size:13px;font-weight:700;color:var(--ink-hi)}
+.myhouse-card{margin:0 16px 8px;background:#fff;border-radius:12px;padding:16px}
+.myhouse-title{font-size:15px;font-weight:700;margin-bottom:14px}
+.myhouse-items{display:flex;justify-content:space-between}
+.myhouse-item{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-size:11px;color:var(--ink-md);cursor:pointer;flex:1;
+}
+.myhouse-ico{
+  width:44px;height:44px;background:var(--bg);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.quick-filter{
+  margin:0 16px 8px;
+  background:#e8f2ff;border:1.5px solid rgba(26,110,217,.5);
+  border-left:3px solid #1a6ed9;border-radius:10px;
+  padding:12px 14px;cursor:pointer;
+}
+.qf-main{font-size:11px;font-weight:500;color:#1a6ed9;margin-bottom:4px}
+.qf-sub{font-size:10px;color:#0a7a33}
+.ai-section{padding:12px 16px 8px}
+.ai-title{font-size:14px;font-weight:700;color:var(--ink-hi);margin-bottom:2px}
+.ai-sub{font-size:12px;color:var(--ink-md);margin-bottom:10px}
+.ai-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px;padding-bottom:2px}
+.ai-chip{
+  height:44px;padding:0 16px;border-radius:15px;flex-shrink:0;
+  display:flex;align-items:center;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;
+}
+.ai-chip.on{background:#1a1a1f;color:#fff}
+.ai-chip.off{background:#f2f2f2;color:var(--ink-hi)}
+.safe-banner{
+  margin:0 16px 16px;background:#e8ffed;
+  border:1.5px solid rgba(20,140,71,.4);border-radius:10px;padding:10px 14px;cursor:pointer;
+}
+.sb-main{font-size:10px;font-weight:700;color:#0a7a33;margin-bottom:3px}
+.sb-sub{font-size:10px;color:#666}
 .home-logo{font-size:26px;font-weight:900;color:var(--blue);letter-spacing:-.5px;margin-bottom:10px}
 .search-input{
   display:flex;align-items:center;gap:10px;
@@ -559,77 +615,63 @@ body{
 <div class="device">
 
 <!-- ════════════════════════════════════════
-     S1 — 홈
+     S1 — 홈 (163:6 병합)
 ════════════════════════════════════════ -->
-<div class="scr active white-surface" id="s1">
-  <!-- Category row -->
-  <div style="background:var(--bg-card);border-bottom:1px solid var(--line)">
-    <div class="cat-scroll">
-      <div class="cat-item" onclick="go(2)"><div class="cat-ico">🏠</div><div class="cat-lbl">원/투룸</div></div>
-      <div class="cat-item" onclick="go(2)"><div class="cat-ico">🏢</div><div class="cat-lbl">아파트</div></div>
-      <div class="cat-item" onclick="go(2)"><div class="cat-ico">🏘</div><div class="cat-lbl">주택/빌라</div></div>
-      <div class="cat-item" onclick="go(2)"><div class="cat-ico">🏬</div><div class="cat-lbl">오피스텔</div></div>
-      <div class="cat-item" onclick="go(2)"><div class="cat-ico">🏗</div><div class="cat-lbl">분양</div></div>
+<div class="scr active" id="s1" style="background:var(--bg)">
+  <div class="sb"><span class="t">9:41</span><span class="i">●●● LTE</span></div>
+  <!-- Header: 다방 로고 + 검색바 -->
+  <div class="home-hdr">
+    <div class="home-logo2">다방</div>
+    <div class="home-search2" onclick="go(10)">🔍 어떤 방을 찾으세요?</div>
+  </div>
+  <!-- Category row 1 (big) -->
+  <div class="cat-grid-big">
+    <div class="cat-big-card" onclick="go(2)">
+      <div class="cbc-title">원/투룸</div>
+      <div class="cbc-desc">주택/빌라, 오피스텔<br>아파트 모든<br>전월세 매물!</div>
+    </div>
+    <div class="cat-big-card" onclick="go(2)">
+      <div class="cbc-title">아파트</div>
+      <div class="cat-big-badge">새단장</div>
     </div>
   </div>
-  <!-- Map placeholder -->
-  <div style="width:100%;height:268px;background:#f0f2f7"></div>
-  <!-- Trust banner -->
-  <div class="trust-banner" onclick="go(2)" style="margin-top:0">
-    <div class="tb-ico">🛡️</div>
-    <div class="tb-text">
-      <div class="tb-title">안심 인증 매물만 보기</div>
-      <div class="tb-sub">실측·위반건축물·보증보험 3항목 확인 완료</div>
-    </div>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+  <!-- Category row 2 (small) -->
+  <div class="cat-grid-sm">
+    <div class="cat-sm-card" onclick="go(2)"><div class="cbc-title">주택/빌라</div></div>
+    <div class="cat-sm-card" onclick="go(2)"><div class="cbc-title">오피스텔</div></div>
+    <div class="cat-sm-card" onclick="go(2)"><div class="cbc-title">분양</div></div>
   </div>
-  <!-- Recommendation section -->
-  <div class="sec-hd" style="margin-top:4px"><div class="title">이 조건에 맞는 방</div><div class="more" onclick="go(2)">더보기</div></div>
-  <div style="display:flex;flex-direction:column;gap:10px;padding:0 16px">
-    <!-- Listing card 1 -->
-    <div class="lst-card" onclick="go(3)">
-      <div class="lst-photo">
-        <div class="trust-pill">✅ 안심87</div>
-      </div>
-      <div class="lst-body">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-          <span class="lst-price">월세 300/50</span>
-          <span class="badge orange" style="padding:4px 6px;font-size:11px">시세 -8% ↓</span>
-        </div>
-        <div class="lst-desc">깔끔한 정투룸 · 성건동</div>
-        <div class="info-row" style="margin-bottom:8px"><span>투룸</span><div class="dot"></div><span>39.66㎡</span><div class="dot"></div><span>고층</span></div>
-        <div class="lst-trust-row">
-          <div class="trust-metric hi">🛡 안심87점</div>
-          <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric hi">⚡ 응답95%</div>
-          <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric">⏱ 7분</div>
-        </div>
-      </div>
-    </div>
-    <!-- Listing card 2 -->
-    <div class="lst-card" onclick="go(3)">
-      <div class="lst-photo" style="background:linear-gradient(135deg,#B8C4D0,#98A8B8)">
-        <div class="trust-pill">✅ 안심92</div>
-      </div>
-      <div class="lst-body">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-          <span class="lst-price">월세 280/45</span>
-          <span class="badge green" style="padding:4px 6px;font-size:11px">시세 -12% ↓</span>
-        </div>
-        <div class="lst-desc">채광 좋은 신축 원룸 · 성건동</div>
-        <div class="info-row" style="margin-bottom:8px"><span>원룸</span><div class="dot"></div><span>24.8㎡</span><div class="dot"></div><span>2층</span></div>
-        <div class="lst-trust-row">
-          <div class="trust-metric hi">🛡 안심92점</div>
-          <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric hi">⚡ 응답88%</div>
-          <div class="trust-metric"><div class="dot"></div></div>
-          <div class="trust-metric">⏱ 12분</div>
-        </div>
-      </div>
+  <!-- 우리집 -->
+  <div class="myhouse-card">
+    <div class="myhouse-title">우리집</div>
+    <div class="myhouse-items">
+      <div class="myhouse-item"><div class="myhouse-ico">🏠</div>관리하기</div>
+      <div class="myhouse-item"><div class="myhouse-ico">📝</div>방내놓기</div>
+      <div class="myhouse-item"><div class="myhouse-ico">🔍</div>방구하기</div>
+      <div class="myhouse-item"><div class="myhouse-ico">💡</div>알아보기</div>
     </div>
   </div>
-  <div style="height:16px"></div>
+  <!-- 빠른 필터 -->
+  <div class="quick-filter" onclick="go(2)">
+    <div class="qf-main">✅ 빠른 필터: 시세 대비 ↓  전세보증보험 가능</div>
+    <div class="qf-sub">홈에서 바로 안전 조건 필터링 가능 <span class="badge blue" style="padding:2px 5px;font-size:9px">신규</span></div>
+  </div>
+  <!-- AI 추천 -->
+  <div class="ai-section">
+    <div class="ai-title">용감한 쿠션님이</div>
+    <div class="ai-sub">최근 본 방 기준, AI가 대신 찾아봤어요 🔍</div>
+    <div class="ai-chips">
+      <div class="ai-chip on">#비슷한이집</div>
+      <div class="ai-chip off">#혼족맞춤</div>
+      <div class="ai-chip off">#예산맞춤</div>
+      <div class="ai-chip off">#또래인기</div>
+    </div>
+  </div>
+  <!-- 보증보험 가능 배너 -->
+  <div class="safe-banner" onclick="go(2)">
+    <div class="sb-main">보증보험가능 ✅</div>
+    <div class="sb-sub">AI추천 매물에 안전 배지 표시 <span class="badge blue" style="padding:2px 5px;font-size:9px">신규</span></div>
+  </div>
   <!-- Bottom nav -->
   <div class="bnav">
     <div class="ni on"><span class="ni-ico">🏠</span><span>홈</span></div>
