@@ -12,15 +12,15 @@ button,a{font-family:inherit;cursor:pointer;border:none;background:none;text-dec
 
 /* ── Design tokens ────────────────────────────── */
 :root{
-  /* Brand colors (Dabang 컬러시스템 유지) */
-  --blue:       #1762F5;
-  --blue-dim:   #EEF3FF;
-  --blue-mid:   #5E92FF;
-  --green:      #00B259;
-  --green-dim:  #E6F9EF;
-  --green-dark: #007A3D;
-  --orange:     #FF6B00;
-  --orange-dim: #FFF0E5;
+  /* Brand colors (Dabang 컬러시스템 v5) */
+  --blue:       #326CF9;
+  --blue-dim:   #EBF0FF;
+  --blue-mid:   #6B96FF;
+  --green:      #1CA885;
+  --green-dim:  #E5F5F0;
+  --green-dark: #10644F;
+  --orange:     #FF9727;
+  --orange-dim: #FFF3E8;
   --red:        #FF3B30;
   --red-dim:    #FFF0EF;
   /* Neutrals */
@@ -167,7 +167,7 @@ body{
   border:1.5px solid var(--line);
 }
 .cta-btn{
-  flex:1;min-height:52px;background:var(--blue);color:#fff;
+  flex:1;min-height:48px;background:var(--blue);color:#fff;
   border-radius:14px;font-size:16px;font-weight:700;letter-spacing:-.2px;
   cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;
   -webkit-tap-highlight-color:transparent;transition:opacity .15s;
@@ -214,7 +214,7 @@ body{
 /*   SCREEN 1: 홈 (163:6 병합)                      */
 /* ────────────────────────────────────────────── */
 .home-hdr{display:flex;align-items:center;gap:12px;padding:10px 16px 12px;background:#fff}
-.home-logo2{font-size:26px;font-weight:900;color:#1c63f2;letter-spacing:-.5px;flex-shrink:0}
+.home-logo2{font-size:26px;font-weight:900;color:#326CF9;letter-spacing:-.5px;flex-shrink:0}
 .home-search2{
   flex:1;height:44px;background:#f5f5f7;border-radius:18px;
   display:flex;align-items:center;gap:8px;padding:0 14px;
@@ -253,10 +253,10 @@ body{
 .quick-filter{
   margin:0 16px 8px;
   background:#e8f2ff;border:1.5px solid rgba(26,110,217,.5);
-  border-left:3px solid #1a6ed9;border-radius:10px;
+  border-left:3px solid #326CF9;border-radius:10px;
   padding:12px 14px;cursor:pointer;
 }
-.qf-main{font-size:11px;font-weight:500;color:#1a6ed9;margin-bottom:4px}
+.qf-main{font-size:11px;font-weight:500;color:#326CF9;margin-bottom:4px}
 .qf-sub{font-size:10px;color:#0a7a33}
 .ai-section{padding:12px 16px 8px}
 .ai-title{font-size:14px;font-weight:700;color:var(--ink-hi);margin-bottom:2px}
@@ -323,7 +323,7 @@ body{
 }
 .lst-photo .trust-pill{
   position:absolute;bottom:6px;left:6px;
-  background:rgba(0,178,89,.9);color:#fff;
+  background:rgba(28,168,133,.9);color:#fff;
   font-size:10px;font-weight:700;padding:5px 6px;border-radius:var(--r-pill);
   backdrop-filter:blur(4px);
 }
@@ -410,7 +410,7 @@ body{
 .p-analysis{
   margin:12px 16px;padding:16px;border-radius:var(--r-md);
   background:linear-gradient(135deg,var(--green-dim),rgba(230,249,239,.4));
-  border:1.5px solid rgba(0,178,89,.2);
+  border:1.5px solid rgba(28,168,133,.2);
 }
 .p-analysis .pa-label{font-size:12px;font-weight:700;color:var(--green-dark);margin-bottom:6px;display:flex;align-items:center;gap:4px}
 .p-analysis .pa-main{font-size:15px;font-weight:700;color:var(--ink-hi);margin-bottom:4px}
@@ -432,7 +432,7 @@ body{
 /* ── Safety card ──────────────────────────────── */
 .safety-card{
   margin:0 16px 14px;border-radius:var(--r-md);overflow:hidden;
-  box-shadow:var(--shadow-sm);border:1.5px solid rgba(0,178,89,.18);
+  box-shadow:var(--shadow-sm);border:1.5px solid rgba(28,168,133,.18);
 }
 .safety-head{
   background:var(--green-dark);padding:14px 16px;
@@ -468,7 +468,7 @@ body{
 .trade-head-row .th-title{font-size:16px;font-weight:800;letter-spacing:-.3px}
 .trade-filter{
   padding:10px 14px;border-radius:var(--r-md);
-  background:var(--green-dim);border:1.5px solid rgba(0,178,89,.2);
+  background:var(--green-dim);border:1.5px solid rgba(28,168,133,.2);
   font-size:12px;font-weight:600;color:var(--green-dark);margin-bottom:12px;cursor:pointer;
   display:flex;align-items:center;gap:6px;
 }
@@ -537,7 +537,7 @@ body{
 }
 .chat-preview-card{
   background:var(--green-dim);border-radius:var(--r-md);
-  padding:14px;border:1.5px solid rgba(0,178,89,.2);margin-bottom:14px;
+  padding:14px;border:1.5px solid rgba(28,168,133,.2);margin-bottom:14px;
 }
 .chat-prev-title{font-size:12px;font-weight:700;color:var(--green-dark);margin-bottom:10px;display:flex;align-items:center;gap:5px}
 .cb{max-width:75%;padding:10px 14px;font-size:13px;margin-bottom:6px;line-height:1.5}
@@ -709,11 +709,11 @@ body{
   </div>
   <!-- Filter chips -->
   <div style="display:flex;gap:8px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;background:var(--bg-card);border-bottom:1px solid var(--line)">
-    <div class="badge blue" style="padding:9px 12px;min-height:32px;cursor:pointer" onclick="toggleChip(this,'blue')">안심 인증 ✓</div>
-    <div class="badge line" style="padding:9px 12px;min-height:32px;cursor:pointer" onclick="filterSheet('거래유형')">거래유형 ∨</div>
-    <div class="badge line" style="padding:9px 12px;min-height:32px;cursor:pointer" onclick="filterSheet('가격')">가격 ∨</div>
-    <div class="badge line" style="padding:9px 12px;min-height:32px;cursor:pointer" onclick="filterSheet('방크기')">방크기 ∨</div>
-    <div class="badge green" style="padding:9px 12px;min-height:32px;cursor:pointer" onclick="toggleChip(this,'green')">시세↓ ✓</div>
+    <div class="badge blue" style="padding:9px 14px;min-height:48px;cursor:pointer;border-radius:24px" onclick="toggleChip(this,'blue')">안심 인증 ✓</div>
+    <div class="badge line" style="padding:9px 14px;min-height:48px;cursor:pointer;border-radius:24px" onclick="filterSheet('거래유형')">거래유형 ∨</div>
+    <div class="badge line" style="padding:9px 14px;min-height:48px;cursor:pointer;border-radius:24px" onclick="filterSheet('가격')">가격 ∨</div>
+    <div class="badge line" style="padding:9px 14px;min-height:48px;cursor:pointer;border-radius:24px" onclick="filterSheet('방크기')">방크기 ∨</div>
+    <div class="badge green" style="padding:9px 14px;min-height:48px;cursor:pointer;border-radius:24px" onclick="toggleChip(this,'green')">시세↓ ✓</div>
   </div>
   <!-- Result count -->
   <div style="padding:12px 16px 8px;font-size:13px;font-weight:600;color:var(--ink-lo)">
@@ -837,8 +837,8 @@ body{
         <svg viewBox="0 0 88 88" width="88" height="88">
           <defs>
             <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1762F5"/>
-              <stop offset="100%" stop-color="#00B259"/>
+              <stop offset="0%" stop-color="#326CF9"/>
+              <stop offset="100%" stop-color="#1CA885"/>
             </linearGradient>
           </defs>
           <circle cx="44" cy="44" r="36" fill="none" stroke="#EAECF4" stroke-width="7"/>
@@ -888,11 +888,11 @@ body{
   <div style="padding:0 16px 16px">
     <div style="font-size:12px;font-weight:600;color:var(--ink-lo);margin-bottom:10px">상세 정보 바로가기</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <div class="badge line" style="padding:11px 8px;min-height:36px;cursor:pointer" onclick="go(4)">💰 가격정보</div>
-      <div class="badge line" style="padding:11px 8px;min-height:36px;cursor:pointer" onclick="go(5)">📋 상세정보</div>
-      <div class="badge line" style="padding:11px 8px;min-height:36px;cursor:pointer" onclick="go(6)">🛡 옵션·안심</div>
-      <div class="badge line" style="padding:11px 8px;min-height:36px;cursor:pointer" onclick="go(7)">📊 거래정보</div>
-      <div class="badge line" style="padding:11px 8px;min-height:36px;cursor:pointer" onclick="go(8)">🏙 3D투어</div>
+      <div class="badge line" style="padding:11px 8px;min-height:48px;cursor:pointer" onclick="go(4)">💰 가격정보</div>
+      <div class="badge line" style="padding:11px 8px;min-height:48px;cursor:pointer" onclick="go(5)">📋 상세정보</div>
+      <div class="badge line" style="padding:11px 8px;min-height:48px;cursor:pointer" onclick="go(6)">🛡 옵션·안심</div>
+      <div class="badge line" style="padding:11px 8px;min-height:48px;cursor:pointer" onclick="go(7)">📊 거래정보</div>
+      <div class="badge line" style="padding:11px 8px;min-height:48px;cursor:pointer" onclick="go(8)">🏙 3D투어</div>
     </div>
   </div>
   <div style="height:12px"></div>
