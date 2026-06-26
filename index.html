@@ -65,6 +65,19 @@ body{
   box-shadow:var(--shadow-lg),0 0 0 1px rgba(255,255,255,.07),inset 0 0 0 1px rgba(255,255,255,.1);
   overflow:hidden;position:relative;
 }
+@media(max-width:430px){
+  body{
+    background:var(--bg);
+    align-items:flex-start;justify-content:flex-start;
+    gap:0;padding:0;margin:0;
+    overflow:hidden;height:100dvh;min-height:unset;
+  }
+  .device{
+    width:100vw;height:100dvh;
+    border-radius:0;box-shadow:none;
+  }
+  .prog{display:none}
+}
 
 /* ── Screens ──────────────────────────────────── */
 .scr{
@@ -1452,39 +1465,6 @@ function toast(msg){
   tid=setTimeout(()=>el.classList.remove('show'),2400);
 }
 
-/* Mobile scale-to-fit */
-function scaleDevice(){
-  const device=document.querySelector('.device');
-  const prog=document.querySelector('.prog');
-  const vw=window.innerWidth;
-  const vh=window.innerHeight;
-  if(vw<=430){
-    const scale=Math.min(vw/390, vh/844);
-    device.style.zoom=scale;
-    device.style.borderRadius='0';
-    if(prog) prog.style.display='none';
-    document.body.style.justifyContent='flex-start';
-    document.body.style.alignItems='center';
-    document.body.style.padding='0';
-    document.body.style.margin='0';
-    document.body.style.overflow='hidden';
-    document.body.style.height='100dvh';
-    document.body.style.minHeight='unset';
-  } else {
-    device.style.zoom='';
-    device.style.borderRadius='';
-    if(prog) prog.style.display='';
-    document.body.style.justifyContent='';
-    document.body.style.alignItems='';
-    document.body.style.padding='';
-    document.body.style.margin='';
-    document.body.style.overflow='';
-    document.body.style.height='';
-    document.body.style.minHeight='';
-  }
-}
-scaleDevice();
-window.addEventListener('resize',scaleDevice);
 </script>
 </body>
 </html>
