@@ -599,6 +599,85 @@ body{
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+/* ── Home category chips ──────────────────────── */
+.home-chips{
+  display:flex;gap:8px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;
+  background:#fff;border-bottom:1px solid var(--line);
+}
+.home-chips::-webkit-scrollbar{display:none}
+.home-chip{
+  flex-shrink:0;height:48px;padding:0 14px;border-radius:24px;
+  display:flex;align-items:center;font-size:13px;font-weight:500;
+  color:var(--ink-md);background:#fff;border:1.5px solid var(--line);
+  cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent;
+  transition:background .15s,border-color .15s;
+}
+.home-chip.act-blue{background:var(--blue-dim);border-color:var(--blue);color:var(--blue);font-weight:700}
+.home-chip.act-green{background:var(--green-dim);border-color:var(--green);color:var(--green-dark);font-weight:700}
+
+/* ── Trust select banner ───────────────────────── */
+.trust-sel-banner{
+  margin:12px 16px;padding:14px 16px;border-radius:var(--r-md);
+  background:linear-gradient(135deg,#2563EB,var(--blue));color:#fff;
+  display:flex;align-items:center;gap:12px;cursor:pointer;
+}
+.trust-sel-banner .tb-ico{font-size:26px;flex-shrink:0}
+.trust-sel-banner .tb-title{font-size:14px;font-weight:800;margin-bottom:2px}
+.trust-sel-banner .tb-sub{font-size:11px;opacity:.85;line-height:1.5}
+
+/* ── AD banner ─────────────────────────────────── */
+.ad-banner{
+  margin:0 16px 4px;padding:12px 14px;border-radius:var(--r-md);
+  background:#FFF8EC;border:1px solid #FFE4A0;cursor:pointer;
+  display:flex;align-items:center;gap:10px;
+}
+.ad-label{font-size:10px;font-weight:800;background:#FF9727;color:#fff;padding:2px 6px;border-radius:4px;flex-shrink:0}
+.ad-text .ad-main{font-size:13px;font-weight:700;color:var(--ink-hi);margin-bottom:2px}
+.ad-text .ad-sub{font-size:11px;color:var(--ink-lo)}
+
+/* ── Map preview section ───────────────────────── */
+.map-preview-wrap{background:#fff;border-top:8px solid var(--bg)}
+.map-preview-search{
+  display:flex;align-items:center;gap:8px;padding:10px 16px;
+  border-bottom:1px solid var(--line);
+}
+.map-preview-input{
+  flex:1;height:44px;background:var(--bg);border-radius:22px;
+  display:flex;align-items:center;padding:0 14px;font-size:14px;
+  font-weight:600;color:var(--ink-hi);cursor:pointer;
+}
+.mini-map-area{
+  position:relative;height:200px;background:#E8EDE8;overflow:hidden;
+}
+.mroad{position:absolute;background:#fff}
+.mblock{position:absolute;background:#D4D8D0;border-radius:3px}
+.price-pin{
+  position:absolute;height:36px;padding:0 12px;border-radius:18px;
+  display:flex;align-items:center;font-size:12px;font-weight:700;
+  background:#fff;color:var(--ink-hi);
+  box-shadow:0 2px 8px rgba(0,0,0,.12);cursor:pointer;white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;
+}
+.price-pin.active{background:var(--blue);color:#fff;box-shadow:0 3px 12px rgba(50,108,249,.35)}
+.map-area-badge{
+  position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+  background:var(--blue);color:#fff;font-size:13px;font-weight:700;
+  padding:6px 16px;border-radius:20px;white-space:nowrap;
+  box-shadow:0 3px 12px rgba(50,108,249,.3);
+}
+.map-sort-tabs{display:flex;border-bottom:1px solid var(--line);padding:0 16px}
+.map-sort-tab{
+  padding:0 12px;height:44px;font-size:13px;font-weight:500;color:var(--ink-lo);
+  cursor:pointer;border-bottom:2.5px solid transparent;
+  display:flex;align-items:center;-webkit-tap-highlight-color:transparent;
+}
+.map-sort-tab.on{color:var(--blue);border-bottom-color:var(--blue);font-weight:700}
+.map-see-all{
+  text-align:center;padding:14px 16px;font-size:13px;font-weight:700;
+  color:var(--blue);cursor:pointer;border-top:1px solid var(--line);
+  -webkit-tap-highlight-color:transparent;
+}
+
 /* ── Naver pay banner ─────────────────────────── */
 .naver-banner{
   margin:0 16px 20px;padding:16px;border-radius:var(--r-md);
@@ -628,34 +707,103 @@ body{
 <div class="device">
 
 <!-- ════════════════════════════════════════
-     S1 — 홈 (163:6 병합)
+     S1 — 홈 (v5 Figma 동기화)
 ════════════════════════════════════════ -->
 <div class="scr active" id="s1" style="background:var(--bg)">
   <div class="sb"><span class="t">9:41</span><span class="i">●●● LTE</span></div>
-  <!-- Header: 다방 로고 + 검색바 -->
+
+  <!-- Header -->
   <div class="home-hdr">
     <div class="home-logo2">다방</div>
-    <div class="home-search2" onclick="go(10)">🔍 어떤 방을 찾으세요?</div>
-  </div>
-  <!-- Category row 1 (big) -->
-  <div class="cat-grid-big">
-    <div class="cat-big-card" onclick="go(2)">
-      <div class="cbc-title">원/투룸</div>
-      <div class="cbc-desc">주택/빌라, 오피스텔<br>아파트 모든<br>전월세 매물!</div>
-    </div>
-    <div class="cat-big-card" onclick="go(2)">
-      <div class="cbc-title">아파트</div>
-      <div class="cat-big-badge">새단장</div>
+    <div class="home-search2" onclick="go(10)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="opacity:.4"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      어떤 방을 찾으세요?
     </div>
   </div>
-  <!-- Category row 2 (small) -->
-  <div class="cat-grid-sm">
-    <div class="cat-sm-card" onclick="go(2)"><div class="cbc-title">주택/빌라</div></div>
-    <div class="cat-sm-card" onclick="go(2)"><div class="cbc-title">오피스텔</div></div>
-    <div class="cat-sm-card" onclick="go(2)"><div class="cbc-title">분양</div></div>
+
+  <!-- Category chips row 1 -->
+  <div class="home-chips" style="border-bottom:none;padding-bottom:0">
+    <div class="home-chip act-blue" onclick="go(2)">원/투룸 ▾</div>
+    <div class="home-chip" onclick="go(2)">아파트 ▾</div>
+    <div class="home-chip" onclick="go(2)">주택/빌라 ▾</div>
+    <div class="home-chip" onclick="go(2)">오피스텔 ▾</div>
+    <div class="home-chip" onclick="go(2)">분양 ▾</div>
   </div>
+
+  <!-- Category chips row 2 -->
+  <div class="home-chips">
+    <div class="home-chip" onclick="toast('거래유형 필터')">거래유형 ▾</div>
+    <div class="home-chip" onclick="toast('가격 필터')">가격 ▾</div>
+    <div class="home-chip" onclick="toast('방크기 필터')">방크기 ▾</div>
+    <div class="home-chip act-green" onclick="go(2)">안심인증 ✓</div>
+  </div>
+
+  <!-- 안심 인증 배너 -->
+  <div class="trust-sel-banner" onclick="go(2)">
+    <div class="tb-ico">🛡</div>
+    <div>
+      <div class="tb-title">안심 인증 매물만 보기</div>
+      <div class="tb-sub">실측·위반건축물·보증보험 3항목 확인 완료</div>
+    </div>
+  </div>
+
+  <!-- 이 조건에 맞는 방 -->
+  <div style="background:var(--bg-card);margin-bottom:8px">
+    <div class="sec-hd">
+      <div class="title">이 조건에 맞는 방</div>
+      <div class="more" onclick="go(2)">더보기</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;padding:0 16px 16px">
+      <div class="lst-card" onclick="go(3)">
+        <div class="lst-photo"><div class="trust-pill">✅ 안심87</div></div>
+        <div class="lst-body">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+            <span class="lst-price">월세 300/50</span>
+            <span class="badge orange" style="padding:4px 6px;font-size:11px">시세 -8% ↓</span>
+          </div>
+          <div class="lst-desc">깔끔한 정투룸 · 성건동</div>
+          <div class="info-row" style="margin-bottom:8px"><span>39.66㎡</span><div class="dot"></div><span>고층</span></div>
+          <div class="lst-trust-row">
+            <div class="trust-metric hi">🛡 87점</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric hi">응답 95%</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric">7분</div>
+          </div>
+        </div>
+      </div>
+      <div class="lst-card" onclick="go(3)">
+        <div class="lst-photo" style="background:linear-gradient(135deg,#B8C4D0,#98A8B8)"><div class="trust-pill">✅ 안심92</div></div>
+        <div class="lst-body">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+            <span class="lst-price">월세 280/45</span>
+            <span class="badge green" style="padding:4px 6px;font-size:11px">시세 -12% ↓</span>
+          </div>
+          <div class="lst-desc">채광 좋은 신축 원룸 · 성건동</div>
+          <div class="info-row" style="margin-bottom:8px"><span>24.8㎡</span><div class="dot"></div><span>2층</span></div>
+          <div class="lst-trust-row">
+            <div class="trust-metric hi">🛡 92점</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric hi">응답 88%</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric">12분</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD 배너 -->
+  <div class="ad-banner" onclick="toast('광고')">
+    <div class="ad-label">AD</div>
+    <div class="ad-text">
+      <div class="ad-main">이사 준비 중이세요? 가구·가전 최대 30% 할인 🛋</div>
+      <div class="ad-sub">오늘만 특가 · 삼성·LG·이케아 · 무료배송</div>
+    </div>
+  </div>
+
   <!-- 우리집 -->
-  <div class="myhouse-card">
+  <div class="myhouse-card" style="margin-top:8px">
     <div class="myhouse-title">우리집</div>
     <div class="myhouse-items">
       <div class="myhouse-item"><div class="myhouse-ico">🏠</div>관리하기</div>
@@ -664,11 +812,7 @@ body{
       <div class="myhouse-item"><div class="myhouse-ico">💡</div>알아보기</div>
     </div>
   </div>
-  <!-- 빠른 필터 -->
-  <div class="quick-filter" onclick="go(2)">
-    <div class="qf-main">✅ 빠른 필터: 시세 대비 ↓  전세보증보험 가능</div>
-    <div class="qf-sub">홈에서 바로 안전 조건 필터링 가능 <span class="badge blue" style="padding:2px 5px;font-size:9px">신규</span></div>
-  </div>
+
   <!-- AI 추천 -->
   <div class="ai-section">
     <div class="ai-title">용감한 쿠션님이</div>
@@ -680,11 +824,115 @@ body{
       <div class="ai-chip off">#또래인기</div>
     </div>
   </div>
-  <!-- 보증보험 가능 배너 -->
-  <div class="safe-banner" onclick="go(2)">
-    <div class="sb-main">보증보험가능 ✅</div>
-    <div class="sb-sub">AI추천 매물에 안전 배지 표시 <span class="badge blue" style="padding:2px 5px;font-size:9px">신규</span></div>
+
+  <!-- 빠른 필터 -->
+  <div class="quick-filter" onclick="go(2)" style="margin-bottom:0">
+    <div class="qf-main">✅ 빠른 필터: 시세 대비 ↓  전세보증보험 가능</div>
+    <div class="qf-sub">홈에서 바로 안전 조건 필터링 가능 <span class="badge blue" style="padding:2px 5px;font-size:9px">신규</span></div>
   </div>
+
+  <!-- 지도 미리보기 섹션 -->
+  <div class="map-preview-wrap">
+    <!-- 검색바 -->
+    <div class="map-preview-search">
+      <div class="map-preview-input" onclick="go(10)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="opacity:.5;margin-right:8px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        성건동
+      </div>
+      <div style="width:40px;height:40px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;flex-shrink:0">⚙</div>
+    </div>
+
+    <!-- 필터 칩 -->
+    <div class="home-chips">
+      <div class="home-chip act-blue" onclick="go(2)">원/투룸 ▾</div>
+      <div class="home-chip" onclick="toast('전체가격')">전체가격 ▾</div>
+      <div class="home-chip act-blue" onclick="go(2)">안심인증 ✓</div>
+      <div class="home-chip" onclick="toast('더보기')">더보기 ▾</div>
+    </div>
+
+    <!-- 미니 맵 -->
+    <div class="mini-map-area" onclick="go(2)">
+      <!-- 도로 (가로) -->
+      <div class="mroad" style="left:0;top:56px;width:100%;height:8px"></div>
+      <div class="mroad" style="left:0;top:130px;width:100%;height:8px"></div>
+      <!-- 도로 (세로) -->
+      <div class="mroad" style="left:88px;top:0;width:8px;height:100%"></div>
+      <div class="mroad" style="left:196px;top:0;width:8px;height:100%"></div>
+      <div class="mroad" style="left:304px;top:0;width:8px;height:100%"></div>
+      <!-- 블록 -->
+      <div class="mblock" style="left:8px;top:8px;width:72px;height:40px"></div>
+      <div class="mblock" style="left:104px;top:8px;width:84px;height:40px"></div>
+      <div class="mblock" style="left:212px;top:8px;width:84px;height:40px"></div>
+      <div class="mblock" style="left:320px;top:8px;width:64px;height:40px"></div>
+      <div class="mblock" style="left:8px;top:72px;width:72px;height:50px"></div>
+      <div class="mblock" style="left:104px;top:72px;width:84px;height:50px"></div>
+      <div class="mblock" style="left:212px;top:72px;width:84px;height:50px"></div>
+      <div class="mblock" style="left:320px;top:72px;width:64px;height:50px"></div>
+      <div class="mblock" style="left:8px;top:146px;width:72px;height:46px"></div>
+      <div class="mblock" style="left:212px;top:146px;width:84px;height:46px"></div>
+      <div class="mblock" style="left:320px;top:146px;width:64px;height:46px"></div>
+      <!-- 가격 핀 -->
+      <div class="price-pin active" style="left:104px;top:82px" onclick="go(2)">월세 300/50</div>
+      <div class="price-pin" style="left:8px;top:86px" onclick="go(2)">월세 200/35</div>
+      <div class="price-pin" style="left:212px;top:16px" onclick="go(2)">월세 250/40</div>
+      <div class="price-pin" style="left:304px;top:86px" onclick="go(2)">3.5억</div>
+      <!-- 뱃지 -->
+      <div class="map-area-badge">성건동 원/투룸 23개</div>
+    </div>
+
+    <!-- 소팅 탭 -->
+    <div class="map-sort-tabs">
+      <div class="map-sort-tab on">최신순</div>
+      <div class="map-sort-tab" onclick="toast('가격낮은순 정렬')">가격낮은순</div>
+      <div class="map-sort-tab" onclick="toast('면적순 정렬')">면적순</div>
+    </div>
+
+    <!-- 매물 카드 -->
+    <div style="display:flex;flex-direction:column;gap:10px;padding:12px 16px">
+      <div class="lst-card" style="border:2px solid var(--blue);background:var(--blue-dim)" onclick="go(3)">
+        <div class="lst-photo"><div class="trust-pill">✅ 안심87</div></div>
+        <div class="lst-body">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+            <span class="lst-price">월세 300/50</span>
+            <span class="badge orange" style="padding:4px 6px;font-size:11px">시세 -8% ↓</span>
+          </div>
+          <div class="lst-desc">깔끔한 정투룸 · 성건동</div>
+          <div class="info-row" style="margin-bottom:8px"><span>39.66㎡</span><div class="dot"></div><span>고층 · 투룸</span></div>
+          <div class="lst-trust-row" style="background:#fff">
+            <div class="trust-metric hi">🛡 87점</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric hi">응답 95%</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric">7분</div>
+          </div>
+        </div>
+      </div>
+      <div class="lst-card" onclick="go(3)">
+        <div class="lst-photo" style="background:linear-gradient(135deg,#B8C4D0,#98A8B8)"><div class="trust-pill">✅ 안심92</div></div>
+        <div class="lst-body">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+            <span class="lst-price">월세 280/45</span>
+          </div>
+          <div class="lst-desc">채광 좋은 신축 · 성건동</div>
+          <div class="info-row" style="margin-bottom:8px"><span>24.8㎡</span><div class="dot"></div><span>2층 · 원룸</span></div>
+          <div class="lst-trust-row">
+            <div class="trust-metric hi">🛡 92점</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric hi">응답 88%</div>
+            <div class="trust-metric"><div class="dot"></div></div>
+            <div class="trust-metric">12분</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 전체보기 -->
+    <div class="map-see-all" onclick="go(2)">매물 목록 전체보기 →</div>
+  </div>
+
+  <!-- 하단 여백 -->
+  <div style="height:80px"></div>
+
   <!-- Bottom nav -->
   <div class="bnav">
     <div class="ni on"><span class="ni-ico">🏠</span><span>홈</span></div>
