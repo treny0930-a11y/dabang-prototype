@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>다방 To-be v3</title>
+<title>다방 To-be — 최종</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* ── Reset ────────────────────────────────────── */
@@ -59,25 +59,19 @@ body{
 
 /* ── Device shell ─────────────────────────────── */
 .device{
-  width:390px;height:844px;
+  width:100vw;height:100dvh;
   background:var(--bg);
-  border-radius:46px;
-  box-shadow:var(--shadow-lg),0 0 0 1px rgba(255,255,255,.07),inset 0 0 0 1px rgba(255,255,255,.1);
+  border-radius:0;
+  box-shadow:none;
   overflow:hidden;position:relative;
 }
-@media(max-width:430px){
-  body{
-    background:var(--bg);
-    align-items:flex-start;justify-content:flex-start;
-    gap:0;padding:0;margin:0;
-    overflow:hidden;height:100dvh;min-height:unset;
-  }
-  .device{
-    width:100vw;height:100dvh;
-    border-radius:0;box-shadow:none;
-  }
-  .prog{display:none}
+body{
+  background:var(--bg);
+  align-items:flex-start;justify-content:flex-start;
+  gap:0;padding:0;margin:0;
+  overflow:hidden;height:100dvh;min-height:unset;
 }
+.prog{display:none}
 
 /* ── Screens ──────────────────────────────────── */
 .scr{
