@@ -701,6 +701,7 @@ body{
   <div class="pd" data-s="8"></div>
   <div class="pd" data-s="9"></div>
   <div class="pd" data-s="10"></div>
+  <div class="pd" data-s="11"></div>
   <span class="pl" id="pl">홈</span>
 </div>
 
@@ -724,17 +725,17 @@ body{
   <!-- Category chips row 1 -->
   <div class="home-chips" style="border-bottom:none;padding-bottom:0">
     <div class="home-chip act-blue" onclick="go(2)">원/투룸 ▾</div>
-    <div class="home-chip" onclick="go(2)">아파트 ▾</div>
     <div class="home-chip" onclick="go(2)">주택/빌라 ▾</div>
+    <div class="home-chip" onclick="go(2)">아파트 ▾</div>
     <div class="home-chip" onclick="go(2)">오피스텔 ▾</div>
     <div class="home-chip" onclick="go(2)">분양 ▾</div>
   </div>
 
   <!-- Category chips row 2 -->
   <div class="home-chips">
-    <div class="home-chip" onclick="toast('거래유형 필터')">거래유형 ▾</div>
     <div class="home-chip" onclick="toast('가격 필터')">가격 ▾</div>
     <div class="home-chip" onclick="toast('방크기 필터')">방크기 ▾</div>
+    <div class="home-chip" onclick="toast('거래유형 필터')">거래유형 ▾</div>
     <div class="home-chip act-green" onclick="go(2)">안심인증 ✓</div>
   </div>
 
@@ -937,7 +938,7 @@ body{
   <div class="bnav">
     <div class="ni on"><span class="ni-ico">🏠</span><span>홈</span></div>
     <div class="ni"><span class="ni-ico">❤️</span><span>관심목록</span></div>
-    <div class="ni" onclick="go(2)"><span class="ni-ico">🗺️</span><span>지도</span></div>
+    <div class="ni"><span class="ni-ico">🔔</span><span>알림</span></div>
     <div class="ni"><span class="ni-ico">📍</span><span>우리동네</span></div>
     <div class="ni"><span class="ni-ico">☰</span><span>더보기</span></div>
   </div>
@@ -1520,63 +1521,138 @@ body{
 <!-- ════════════════════════════════════════
      S10 — 검색
 ════════════════════════════════════════ -->
-<div class="scr white-surface" id="s10">
+<div class="scr" id="s10" style="background:var(--bg)">
   <div class="sb"><span class="t">9:41</span><span class="i">●●● LTE</span></div>
-  <div style="display:flex;align-items:center;gap:8px;padding:4px 16px 10px;background:#fff;border-bottom:1px solid var(--line)">
+  <!-- 검색바 -->
+  <div class="map-preview-search" style="background:#fff">
+    <div class="map-preview-input" style="border:1.5px solid var(--blue)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="margin-right:8px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      성건동
+    </div>
+    <div style="width:40px;height:40px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;flex-shrink:0">⚙</div>
+  </div>
+  <!-- 필터 칩 -->
+  <div class="home-chips" style="background:#fff">
+    <div class="home-chip act-blue" onclick="toast('원/투룸 필터')">원/투룸 ▾</div>
+    <div class="home-chip" onclick="toast('전체가격 필터')">전체가격 ▾</div>
+    <div class="home-chip act-blue" onclick="toast('안심인증')">안심인증 ✓</div>
+    <div class="home-chip" onclick="toast('더보기')">더보기 ▾</div>
+  </div>
+  <!-- 지도 영역 -->
+  <div class="mini-map-area" style="height:300px" onclick="toast('지도 확대')">
+    <div class="mroad" style="left:0;top:80px;width:100%;height:8px"></div>
+    <div class="mroad" style="left:0;top:180px;width:100%;height:8px"></div>
+    <div class="mroad" style="left:0;top:260px;width:100%;height:8px"></div>
+    <div class="mroad" style="left:88px;top:0;width:8px;height:100%"></div>
+    <div class="mroad" style="left:196px;top:0;width:8px;height:100%"></div>
+    <div class="mroad" style="left:304px;top:0;width:8px;height:100%"></div>
+    <div class="mblock" style="left:8px;top:8px;width:72px;height:64px"></div>
+    <div class="mblock" style="left:104px;top:8px;width:84px;height:64px"></div>
+    <div class="mblock" style="left:212px;top:8px;width:84px;height:64px"></div>
+    <div class="mblock" style="left:320px;top:8px;width:64px;height:64px"></div>
+    <div class="mblock" style="left:8px;top:96px;width:72px;height:76px"></div>
+    <div class="mblock" style="left:104px;top:96px;width:84px;height:76px"></div>
+    <div class="mblock" style="left:212px;top:96px;width:84px;height:76px"></div>
+    <div class="mblock" style="left:320px;top:96px;width:64px;height:76px"></div>
+    <div class="mblock" style="left:8px;top:196px;width:72px;height:56px"></div>
+    <div class="mblock" style="left:104px;top:196px;width:84px;height:56px"></div>
+    <div class="mblock" style="left:212px;top:196px;width:84px;height:56px"></div>
+    <div class="mblock" style="left:320px;top:196px;width:64px;height:56px"></div>
+    <div class="price-pin" style="left:8px;top:108px">200/35</div>
+    <div class="price-pin active" style="left:116px;top:106px">300/50</div>
+    <div class="price-pin" style="left:212px;top:18px">250/40</div>
+    <div class="price-pin" style="left:316px;top:108px">3.5억</div>
+    <div class="map-area-badge">이 지역 매물 23개</div>
+  </div>
+  <!-- 소팅 탭 -->
+  <div class="map-sort-tabs" style="background:#fff">
+    <div class="map-sort-tab on">최신순</div>
+    <div class="map-sort-tab" onclick="toast('가격낮은순')">가격낮은순</div>
+    <div class="map-sort-tab" onclick="toast('면적순')">면적순</div>
+  </div>
+  <!-- 매물 카드 -->
+  <div style="display:flex;flex-direction:column;gap:10px;padding:12px 16px;background:#fff">
+    <div class="lst-card" style="border:2px solid var(--blue);background:var(--blue-dim)" onclick="go(3)">
+      <div class="lst-photo"><div class="trust-pill">✅ 안심87</div></div>
+      <div class="lst-body">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+          <span class="lst-price">월세 300/50</span>
+          <span class="badge orange" style="padding:4px 6px;font-size:11px">시세 -8% ↓</span>
+        </div>
+        <div class="lst-desc">깔끔한 정투룸</div>
+        <div class="info-row" style="margin-bottom:8px"><span>투룸</span><div class="dot"></div><span>39.66㎡</span><div class="dot"></div><span>고층</span></div>
+        <div class="lst-trust-row" style="background:#fff">
+          <div class="trust-metric hi">🛡 87점</div>
+          <div class="trust-metric"><div class="dot"></div></div>
+          <div class="trust-metric hi">응답 95%</div>
+          <div class="trust-metric"><div class="dot"></div></div>
+          <div class="trust-metric">7분</div>
+        </div>
+      </div>
+    </div>
+    <div class="lst-card" onclick="go(3)">
+      <div class="lst-photo" style="background:linear-gradient(135deg,#B8C4D0,#98A8B8)"><div class="trust-pill">✅ 안심92</div></div>
+      <div class="lst-body">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+          <span class="lst-price">월세 280/45</span>
+        </div>
+        <div class="lst-desc">채광 좋은 신축 원룸</div>
+        <div class="info-row" style="margin-bottom:8px"><span>원룸</span><div class="dot"></div><span>24.8㎡</span><div class="dot"></div><span>2층</span></div>
+        <div class="lst-trust-row">
+          <div class="trust-metric hi">🛡 92점</div>
+          <div class="trust-metric"><div class="dot"></div></div>
+          <div class="trust-metric hi">응답 88%</div>
+          <div class="trust-metric"><div class="dot"></div></div>
+          <div class="trust-metric">12분</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-see-all" style="background:#fff" onclick="go(2)">매물 목록 전체보기 →</div>
+  <div style="height:80px"></div>
+  <!-- Bottom nav -->
+  <div class="bnav">
+    <div class="ni on"><span class="ni-ico">🏠</span><span>홈</span></div>
+    <div class="ni"><span class="ni-ico">❤️</span><span>관심목록</span></div>
+    <div class="ni"><span class="ni-ico">🔔</span><span>알림</span></div>
+    <div class="ni"><span class="ni-ico">📍</span><span>우리동네</span></div>
+    <div class="ni"><span class="ni-ico">☰</span><span>더보기</span></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     S11 — Empty State (검색 결과 없음)
+════════════════════════════════════════ -->
+<div class="scr white-surface" id="s11">
+  <div class="sb"><span class="t">9:41</span><span class="i">●●● LTE</span></div>
+  <div style="display:flex;align-items:center;padding:4px 16px 10px;background:#fff;border-bottom:1px solid var(--line)">
     <div class="hdr-back" onclick="back()" style="font-size:26px;min-width:36px;display:flex;align-items:center">‹</div>
-    <div style="flex:1;display:flex;align-items:center;gap:8px;background:var(--bg);border-radius:var(--r-pill);padding:10px 14px;border:1.5px solid var(--blue)">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <span style="font-size:14px;color:var(--ink-ph)">지역, 지하철역 검색</span>
-    </div>
+    <div style="flex:1;text-align:center;font-size:16px;font-weight:700;letter-spacing:-.3px;margin-right:36px">매물 리스트</div>
   </div>
-  <!-- Recent searches -->
-  <div style="padding:20px 16px 0">
-    <div style="font-size:13px;font-weight:700;color:var(--ink-lo);margin-bottom:4px">최근 검색</div>
-    <div style="display:flex;flex-direction:column">
-      <div onclick="selectSearch('성건동')" style="display:flex;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer;gap:12px">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-ph)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span style="flex:1;font-size:14px">성건동</span>
-        <span style="font-size:16px;color:var(--ink-ph);padding:4px 8px">×</span>
-      </div>
-      <div onclick="selectSearch('원주 단계동')" style="display:flex;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer;gap:12px">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-ph)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span style="flex:1;font-size:14px">원주 단계동</span>
-        <span style="font-size:16px;color:var(--ink-ph);padding:4px 8px">×</span>
-      </div>
-      <div onclick="selectSearch('강남구 역삼동')" style="display:flex;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer;gap:12px">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-ph)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span style="flex:1;font-size:14px">강남구 역삼동</span>
-        <span style="font-size:16px;color:var(--ink-ph);padding:4px 8px">×</span>
-      </div>
+  <!-- Empty state -->
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 32px 40px;gap:16px">
+    <div style="width:80px;height:80px;background:var(--bg);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:36px">🏠</div>
+    <div style="text-align:center">
+      <div style="font-size:18px;font-weight:800;color:var(--ink-hi);margin-bottom:8px">검색 결과가 없어요</div>
+      <div style="font-size:14px;color:var(--ink-lo);line-height:1.6">조건을 변경하거나<br>다른 지역을 검색해보세요</div>
     </div>
+    <button onclick="back()" style="margin-top:16px;width:100%;height:52px;border-radius:var(--r-pill);background:var(--blue);color:#fff;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;border:none">조건 초기화</button>
   </div>
-  <!-- Quick searches -->
-  <div style="padding:20px 16px 0">
-    <div style="font-size:13px;font-weight:700;color:var(--ink-lo);margin-bottom:12px">빠른 검색</div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <div class="badge line" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('내 주변')">📍 내 주변</div>
-      <div class="badge line" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('지하철역 근처')">🚇 지하철역 근처</div>
-      <div class="badge line" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('학교 근처')">🏫 학교 근처</div>
-      <div class="badge line" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('직장 근처')">🏢 직장 근처</div>
-    </div>
-  </div>
-  <!-- Popular areas -->
-  <div style="padding:20px 16px 0">
-    <div style="font-size:13px;font-weight:700;color:var(--ink-lo);margin-bottom:12px">인기 지역</div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <div class="badge blue" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('강남구')">강남구</div>
-      <div class="badge blue" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('마포구')">마포구</div>
-      <div class="badge blue" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('성동구')">성동구</div>
-      <div class="badge blue" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('용산구')">용산구</div>
-      <div class="badge blue" style="padding:9px 14px;cursor:pointer" onclick="selectSearch('송파구')">송파구</div>
-    </div>
+  <div style="height:80px"></div>
+  <!-- Bottom nav -->
+  <div class="bnav">
+    <div class="ni on"><span class="ni-ico">🏠</span><span>홈</span></div>
+    <div class="ni"><span class="ni-ico">❤️</span><span>관심목록</span></div>
+    <div class="ni"><span class="ni-ico">🔔</span><span>알림</span></div>
+    <div class="ni"><span class="ni-ico">📍</span><span>우리동네</span></div>
+    <div class="ni"><span class="ni-ico">☰</span><span>더보기</span></div>
   </div>
 </div>
 
 </div><!-- /device -->
 
 <script>
-const LABELS={1:'홈',2:'매물 리스트',3:'매물 상세',4:'가격정보',5:'상세정보',6:'옵션/안심정보',7:'거래정보',8:'3D투어',9:'중개사',10:'검색'};
+const LABELS={1:'홈',2:'매물 리스트',3:'매물 상세',4:'가격정보',5:'상세정보',6:'옵션/안심정보',7:'거래정보',8:'3D투어',9:'중개사',10:'지도',11:'빈 화면'};
 let cur=1, stk=[1];
 
 function go(n){
